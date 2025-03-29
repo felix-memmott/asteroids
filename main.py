@@ -1,6 +1,7 @@
 import pygame
 from constants import *
-
+from player import Player
+# main function
 def main():
     # initialize pygame
     pygame.init()
@@ -13,6 +14,9 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Asteroids")
 
+    # create the player
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
     # main loop
     running = True
     while running:
@@ -23,8 +27,13 @@ def main():
         # update the game state
         dt = clock.tick(60) / 1000
 
-        # update the display
+        # clear the screen
         screen.fill((0, 0, 0))
+        
+        # draw the player
+        player.draw(screen)
+
+        # update the display
         pygame.display.flip()
  
     # clean up
