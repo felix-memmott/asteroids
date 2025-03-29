@@ -72,5 +72,6 @@ def main():
     # clean up
     pygame.quit()
 
+# run the main function
 if __name__ == "__main__":
     main()
