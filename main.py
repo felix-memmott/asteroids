@@ -30,6 +30,9 @@ def main():
         # clear the screen
         screen.fill((0, 0, 0))
         
+        # update the player
+        player.update(dt)
+
         # draw the player
         player.draw(screen)
 
