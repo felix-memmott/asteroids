@@ -56,6 +56,11 @@ def main():
             if player.is_colliding(asteroid):
                 print("Game over!")
                 running = False
+        for asteroid in asteroids:
+            for shot in shots:
+                if asteroid.is_colliding(shot):
+                    asteroid.kill()
+                    shot.kill()
 
         # draw game objects
         for sprite in drawable:
